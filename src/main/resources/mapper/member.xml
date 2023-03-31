@@ -4,4 +4,19 @@
 	<select id="selectAll" resultType="Member">
 		SELECT * FROM member 
 	</select>
+	
+<!--  <insert id="insert" parameterType="Member" >
+ 		INSERT INTO new_member 
+		VALUES (#{id},#{name},#{password},#{email},
+					#{age,jdbcType=NUMERIC},
+					#{gender,jdbcType=CHAR},
+					#{phone})
+					
+ 	</insert> 
+ 	-->	
+ 	<select id="idCheck" parameterType="String" resultType="int">
+       select count(*) from imember
+       where email=#{email}
+    </select>
+ 	
 </mapper>
